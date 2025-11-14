@@ -7,8 +7,6 @@ namespace Src\Reservations\Infrastructure\Repositories;
 use Src\Reservations\Domain\Entities\ReadReservation;
 use Src\Reservations\Domain\Interfaces\ReservationsRepository;
 use Src\Reservations\Domain\Entities\WriteReservation;
-use Src\Reservations\Domain\ValueObjects\ReservationStartDate;
-use Src\Reservations\Domain\ValueObjects\ReservationEndDate;
 use Src\Reservations\Domain\ValueObjects\ReservationSource;
 use Src\Reservations\Domain\ValueObjects\ReservationCreationDate;
 use Src\Shared\Domain\ValueObjects\Identifier;
@@ -44,16 +42,12 @@ final class MySqlReservationsRepository implements ReservationsRepository
         return [
             $this->make(
                 "1",
-                "2025-01-10",
-                "2025-01-15",
                 "web",
                 "11111111-1111-1111-1111-111111111111",
                 "2025-01-01 08:30:00"
             ),
             $this->make(
                 "2",
-                "2025-02-05",
-                "2025-02-08",
                 "agencia",
                 "22222222-2222-2222-2222-222222222222",
                 "2025-01-20 10:00:00"
@@ -63,16 +57,12 @@ final class MySqlReservationsRepository implements ReservationsRepository
 
     private function make(
         string $id,
-        string $start,
-        string $end,
         string $source,
         string $userId,
         string $createdAt
     ): ReadReservation {
         return new ReadReservation(
             new Identifier($id),
-            new ReservationStartDate($start),
-            new ReservationEndDate($end),
             new ReservationSource($source),
             new Identifier($userId),
             new ReservationCreationDate($createdAt)
