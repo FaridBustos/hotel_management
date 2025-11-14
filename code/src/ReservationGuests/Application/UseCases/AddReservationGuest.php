@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Src\Guests\Application\UseCases;
+namespace Src\ReservationGuests\Application\UseCases;
 
-use Src\Guests\Domain\Entities\WriteGuest;
-use Src\Guests\Domain\Interfaces\GuestsRepository;
+use Src\ReservationGuests\Domain\Entities\WriteReservationGuest;
+use Src\ReservationGuests\Domain\Interfaces\ReservationGuestsRepository;
 
-final class AddGuest
+final class AddReservationGuest
 {
     public function __construct(
-        private readonly GuestsRepository $guestsRepository
+        private readonly ReservationGuestsRepository $repository
     ) {
     }
 
-    public function execute(WriteGuest $guest): void
+    public function execute(WriteReservationGuest $relation): void
     {
-        $this->guestsRepository->addGuest($guest);
+        $this->repository->addReservationGuest($relation);
     }
 }
