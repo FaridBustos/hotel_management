@@ -59,12 +59,12 @@ final class MySqlReservationReportsRepository implements ReservationReportsRepos
             $this->make(
                 '1',
                 'Reporte inicial de la reserva: llegada estimada a las 15:00.',
-                '2025-01-01 10:00:00'
+                12345
             ),
             $this->make(
                 '2',
                 'Notas de la reserva: requiere habitación accesible y cuna.',
-                '2025-02-01 09:30:00'
+                12345
             ),
         ];
     }
@@ -72,7 +72,7 @@ final class MySqlReservationReportsRepository implements ReservationReportsRepos
     private function make(
         string $reservationId,
         string $content,
-        string $dateTime
+        int $dateTime
     ): ReadReservationReport {
         return new ReadReservationReport(
             new Identifier($reservationId),

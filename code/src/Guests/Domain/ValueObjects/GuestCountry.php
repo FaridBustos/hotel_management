@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace Src\Guests\Domain\ValueObjects;
 
-use Src\Shared\Domain\ValueObjects\DefinedValue;
+use Src\Shared\Domain\ValueObjects\CustomString;
 
-final class GuestCountry extends DefinedValue
+final class GuestCountry extends CustomString
 {
     public function verifyValue(): void
     {
-        // País puede ser nulo → representado como "" (string vacío)
     }
 }

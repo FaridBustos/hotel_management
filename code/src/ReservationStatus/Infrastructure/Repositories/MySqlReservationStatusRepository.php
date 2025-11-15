@@ -40,13 +40,13 @@ final class MySqlReservationStatusRepository implements ReservationStatusReposit
     private function seed(): array
     {
         return [
-            $this->make('1', '10', '2025-01-02 10:00:00'),
-            $this->make('1', '20', '2025-01-03 14:30:00'),
-            $this->make('2', '10', '2025-02-01 09:00:00'),
+            $this->make('1', '10', 1234),
+            $this->make('1', '20', 1234),
+            $this->make('2', '10', 1234),
         ];
     }
 
-    private function make(string $reservationId, string $statusId, string $changedAt): ReadReservationStatus
+    private function make(string $reservationId, string $statusId, int $changedAt): ReadReservationStatus
     {
         return new ReadReservationStatus(
             new Identifier($reservationId),

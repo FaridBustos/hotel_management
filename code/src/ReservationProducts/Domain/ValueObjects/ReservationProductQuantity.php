@@ -4,16 +4,12 @@ declare(strict_types=1);
 
 namespace Src\ReservationProducts\Domain\ValueObjects;
 
-use Src\Shared\Domain\ValueObjects\DefinedValue;
+use Src\Shared\Domain\ValueObjects\CustomUnsignedInteger;
 
-final class ReservationProductQuantity extends DefinedValue
+final class ReservationProductQuantity extends CustomUnsignedInteger
 {
     public function verifyValue(): void
     {
-        // Ejemplo de validación:
-        // $value = (int) $this->getValue();
-        // if ($value <= 0) {
-        //     throw new \InvalidArgumentException('Quantity must be greater than zero');
-        // }
+
     }
 }

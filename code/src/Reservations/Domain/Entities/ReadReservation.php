@@ -6,20 +6,20 @@ namespace Src\Reservations\Domain\Entities;
 
 use Src\Shared\Domain\ValueObjects\Identifier;
 use Src\Reservations\Domain\ValueObjects\ReservationSource;
-use Src\Reservations\Domain\ValueObjects\ReservationCreationDate;
+use Src\Shared\Domain\ValueObjects\TimeStamp;
 
 final class ReadReservation
 {
     private Identifier $id;
     private ReservationSource $source;
     private Identifier $userId;
-    private ReservationCreationDate $createdAt;
+    private TimeStamp $createdAt;
 
     public function __construct(
         Identifier $id,
         ReservationSource $source,
         Identifier $userId,
-        ReservationCreationDate $createdAt
+        TimeStamp $createdAt
     ) {
         $this->id        = $id;
         $this->source    = $source;
@@ -31,7 +31,7 @@ final class ReadReservation
     public function getId(): Identifier { return $this->id; }
     public function getSource(): ReservationSource { return $this->source; }
     public function getUserId(): Identifier { return $this->userId; }
-    public function getCreatedAt(): ReservationCreationDate { return $this->createdAt; }
+    public function getCreatedAt(): TimeStamp { return $this->createdAt; }
 
     // ARRAY EXPORT
     public function toArray(): array

@@ -1,9 +1,8 @@
 <?php
 
 namespace Src\Shared\Domain\ValueObjects;
-use Src\Shared\Domain\ValueObjects\DefinedValue;
 
-final class TimeStamp extends DefinedValue
+final class TimeStamp extends CustomUnsignedInteger
 {
     public function verifyValue(): void
     {

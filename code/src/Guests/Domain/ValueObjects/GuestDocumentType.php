@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace Src\Guests\Domain\ValueObjects;
 
-use Src\Shared\Domain\ValueObjects\DefinedValue;
+use Src\Shared\Domain\ValueObjects\CustomString;
 
-final class GuestDocumentType extends DefinedValue
+final class GuestDocumentType extends CustomString
 {
     public function verifyValue(): void
     {
-        // Aquí podrías limitar valores permitidos: DNI, PASAPORTE, CEDULA...
     }
 }

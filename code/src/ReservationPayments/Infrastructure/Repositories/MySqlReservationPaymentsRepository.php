@@ -65,17 +65,17 @@ final class MySqlReservationPaymentsRepository implements ReservationPaymentsRep
             $this->make(
                 '1',
                 100.00,
-                '2025-01-02'
+                123
             ),
             $this->make(
                 '1',
                 50.50,
-                '2025-01-05'
+                213
             ),
             $this->make(
                 '2',
                 200.00,
-                '2025-02-01'
+                321
             ),
         ];
     }
@@ -83,7 +83,7 @@ final class MySqlReservationPaymentsRepository implements ReservationPaymentsRep
     private function make(
         string $reservationId,
         float $amount,
-        string $paymentDate
+        int $paymentDate
     ): ReadReservationPayment {
         return new ReadReservationPayment(
             new Identifier($reservationId),

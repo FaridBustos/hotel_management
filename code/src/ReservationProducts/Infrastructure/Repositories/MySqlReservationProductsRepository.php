@@ -69,19 +69,19 @@ final class MySqlReservationProductsRepository implements ReservationProductsRep
                 '1',  // IdReserva
                 '101',// IdProducto
                 2,
-                '2025-01-11'
+                123
             ),
             $this->make(
                 '1',
                 '102',
                 1,
-                '2025-01-12'
+                123
             ),
             $this->make(
                 '2',
-                '103',
+                '123',
                 3,
-                '' // sin fecha de consumo
+                123 // sin fecha de consumo
             ),
         ];
     }
@@ -90,7 +90,7 @@ final class MySqlReservationProductsRepository implements ReservationProductsRep
         string $reservationId,
         string $productId,
         int $quantity,
-        string $consumptionDate
+        int $consumptionDate
     ): ReadReservationProduct {
         return new ReadReservationProduct(
             new Identifier($reservationId),
